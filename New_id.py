@@ -1,5 +1,5 @@
 # new_id = ".!D..a@!!r#...k1230-1"
-new_id ="=. ="
+new_id = input("아이디를 입력하세요")
 def solution(new_id):
     answer = ""
     check = []
