@@ -7,14 +7,21 @@ class Solution:
             answer=[]
             letter = {'2':'abc','3':'def','4':'ghi','5':'jkl','6':'mno',
                     '7':'pqrs','8':'tuv','9':'wxyz'}
-            all_com = [''] if digits else []
             for digit in digits:
-                for i in letter[digit]:
-                    for com in all_com:
-                        answer.append(com+i)
+                try:
+                    if not answer:
+                        answer = letter[digit]
+                    else:
+                        temp = []
+                        for i in answer:
+                            for j in letter[digit]:
+                                temp.append(i+j)
+                        answer = temp
+                except KeyError:
+                    return "please input number(2~9)"
         else :
             answer=[]
         return answer
-print(Solution().letterCombinations("67"))
+print(Solution().letterCombinations("s"))
 
         
